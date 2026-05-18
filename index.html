@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JokiSet - Parody App Specialist</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+</head>
+<body>
+
+    <div id="page-loader">
+
+        <div class="loader-bg-orb orb1"></div>
+        <div class="loader-bg-orb orb2"></div>
+        <div class="loader-bg-orb orb3"></div>
+    
+        <img src="assets/logo-primary-dark-removebg.png"
+             class="loader-logo" 
+             id="loaderDynamicLogo"
+             alt="JokiSet">
+    
+        <div class="loader-bar-wrap">
+            <div class="loader-bar"></div>
+        </div>
+    
+        <span class="loader-text">LOADING EXPERIENCE...</span>
+    
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- SCROLL PROGRESS -->
+    <div id="scroll-progress"></div>
+
+    <!-- NOISE OVERLAY -->
+    <div id="noise-overlay"></div>
+
+    <!-- THEME BURST CANVAS -->
+    <canvas id="theme-burst-canvas"></canvas>
+
+    <!-- BACKGROUND CANVAS (Pentagon Hologram Worms) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- HERO PARTICLES CONTAINER -->
+    <div id="hero-particles"></div>
+
+    <nav class="floating-nav" id="mainNav">
+        <a href="#hero" class="magnetic">HOME</a>
+        <a href="#about" class="magnetic">ABOUT</a>
+        <a href="#maskot-gallery" class="magnetic">VIBE</a>
+        <a href="#testimonials" class="magnetic">TESTI</a>
+        <a href="#pricing" class="magnetic">PRICE</a>
+    </nav>
+
+    <header>
+        <div class="logo"></div>
+        <div class="theme-switcher">
+            <div class="theme-btn btn-primary" onclick="setTheme('primary')" title="Primary"></div>
+            <div class="theme-btn btn-light" onclick="setTheme('light')" title="Light"></div>
+            <div class="theme-btn btn-dark" onclick="setTheme('dark')" title="Dark"></div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div id="hero-spotlight"></div>
+        <h1 class="hero-title glitch-text" data-text="Custom Parody App Specialist" id="heroTitle">Custom Parody<br>App Specialist</h1>
+        <div class="typewriter-wrap" id="typewriterLine"><span id="typewriterText"></span><span class="typewriter-cursor"></span></div>
+
+        <div class="stats-row">
+            <div class="stat-item">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="8">0</div>
+                <div class="stat-label">App Parodies</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">% Satisfaction</div>
+            </div>
+        </div>
+        
+        <div class="swiper swiper-hero">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/aplikasi/gojek(potrait).png" class="app-mockup" alt="Gojek"></div>
+                <div class="swiper-slide"><img src="assets/aplikasi/ml(landscape).png" class="app-mockup landscape-app" alt="Mobile Legends"></div>
+                <div class="swiper-slide"><img src="assets/aplikasi/instagram(potrait).png" class="app-mockup" alt="Instagram"></div>
+                <div class="swiper-slide"><img src="assets/aplikasi/netflix(landscape).png" class="app-mockup landscape-app" alt="Netflix"></div>
+                <div class="swiper-slide"><img src="assets/aplikasi/spotify(potrait).png" class="app-mockup" alt="Spotify"></div>
+                <div class="swiper-slide"><img src="assets/aplikasi/valorant(landscape).png" class="app-mockup landscape-app" alt="Valorant"></div>
+                <div class="swiper-slide"><img src="assets/aplikasi/gmaps(potrait).png" class="app-mockup" alt="Gmaps"></div>
+                <div class="swiper-slide"><img src="assets/aplikasi/alfagift(potrait).png" class="app-mockup" alt="Alfagift"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-layout">
+            <h3 class="reveal-up">JOKISET 4U</h3>
+            <div class="red-x reveal-up" style="transition-delay:0.1s;">x</div>
+            <div class="section-separator reveal-up" style="transition-delay:0.2s;"></div>
+            <img src="assets/inside out.png" class="inside-out-img reveal-up" alt="Inside Out Characters" style="transition-delay:0.3s;">
+        </div>
+    </section>
+
+    <section id="maskot-gallery">
+        <div class="maskot-header">
+            <h2 class="scramble-text" style="margin-bottom: 10px; font-size: clamp(2rem, 4vw, 3rem);" data-original="Choose Your Vibe">Choose Your Vibe</h2>
+            <div class="section-separator"></div>
+            <p class="sub-headline reveal-up" style="opacity: 0.8; font-size: 1.3rem; transition-delay: 0.1s;">Select a character to see details</p>
+        </div>
+        <div class="swiper swiper-maskot">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide maskot-slide">
+                    <div class="maskot-card bg-alfagift" onclick="openFullDetail('ALFAGIFT', 'alfagift', 'alfagift', '#E1251B')">
+                        <div class="card-particles"></div>
+                        <img src="assets/maskot/alfagift.png" class="maskot-img" alt="Alfagift">
+                        <div class="maskot-name">ALFAGIFT</div>
+                        <div class="maskot-app">Parody App</div>
+                    </div>
+                </div>
+                <div class="swiper-slide maskot-slide">
+                    <div class="maskot-card bg-gmaps" onclick="openFullDetail('GMAPS', 'gmaps', 'gmaps', '#F8F9FA')">
+                        <div class="card-particles"></div>
+                        <img src="assets/maskot/gmaps.png" class="maskot-img" alt="Gmaps">
+                        <div class="maskot-name" style="color: #111;">GMAPS</div>
+                        <div class="maskot-app" style="color: #333;">Parody App</div>
+                    </div>
+                </div>
+                <div class="swiper-slide maskot-slide">
+                    <div class="maskot-card bg-gojek" onclick="openFullDetail('GOJEK', 'gojek', 'gojek', '#00AA13')">
+                        <div class="card-particles"></div>
+                        <img src="assets/maskot/gojek.png" class="maskot-img" alt="Gojek">
+                        <div class="maskot-name">GOJEK</div>
+                        <div class="maskot-app">Parody App</div>
+                    </div>
+                </div>
+                <div class="swiper-slide maskot-slide">
+                    <div class="maskot-card bg-instagram" onclick="openFullDetail('INSTAGRAM', 'instagram', 'instagram', '#e6683c')">
+                        <div class="card-particles"></div>
+                        <img src="assets/maskot/instagram.png" class="maskot-img" alt="Instagram">
+                        <div class="maskot-name">INSTAGRAM</div>
+                        <div class="maskot-app">Parody App</div>
+                    </div>
+                </div>
+                <div class="swiper-slide maskot-slide">
+                    <div class="maskot-card bg-ml" onclick="openFullDetail('MLBB', 'ml', 'ml', '#0B192C')">
+                        <div class="card-particles"></div>
+                        <img src="assets/maskot/ml.png" class="maskot-img" alt="ML">
+                        <div class="maskot-name">MLBB</div>
+                        <div class="maskot-app">Parody App</div>
+                    </div>
+                </div>
+                <div class="swiper-slide maskot-slide">
+                    <div class="maskot-card bg-netflix" onclick="openFullDetail('NETFLIX', 'netflix', 'netflix', '#B81D24')">
+                        <div class="card-particles"></div>
+                        <img src="assets/maskot/netflix.png" class="maskot-img" alt="Netflix">
+                        <div class="maskot-name">NETFLIX</div>
+                        <div class="maskot-app">Parody App</div>
+                    </div>
+                </div>
+                <div class="swiper-slide maskot-slide">
+                    <div class="maskot-card bg-spotify" onclick="openFullDetail('SPOTIFY', 'spotify', 'spotify', '#1DB954')">
+                        <div class="card-particles"></div>
+                        <img src="assets/maskot/spotify.png" class="maskot-img" alt="Spotify">
+                        <div class="maskot-name">SPOTIFY</div>
+                        <div class="maskot-app">Parody App</div>
+                    </div>
+                </div>
+                <div class="swiper-slide maskot-slide">
+                    <div class="maskot-card bg-valorant" onclick="openFullDetail('VALORANT', 'valorant', 'valorant', '#FF4655')">
+                        <div class="card-particles"></div>
+                        <img src="assets/maskot/valorant.png" class="maskot-img" alt="Valorant">
+                        <div class="maskot-name">VALORANT</div>
+                        <div class="maskot-app">Parody App</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <div class="full-detail-page" id="fullDetail">
+        <div class="fd-close" onclick="closeFullDetail()">✖ Close</div>
+        <div class="fd-layout">
+            <div class="fd-left" id="fdLeftColor">
+                <img id="fdCharacter" class="fd-character" src="" alt="Character">
+            </div>
+            <div class="fd-right">
+                <img id="fdAppLogo" class="fd-app-logo" src="" alt="App Logo">
+                <h1 id="fdTitle" class="fd-title">Title</h1>
+                <p class="fd-subtitle">Parody App Mode</p>
+                <p class="fd-desc">Custom parodi aplikasi yang didesain khusus untuk memberikan pengalaman interaktif dan unik. Sangat cocok digunakan untuk hadiah ulang tahun, perayaan anniversary, prank untuk teman terdekat, hingga momen spesial lainnya.</p>
+                <a href="https://wa.me/628157022091" class="btn-primary magnetic" style="display:inline-block; text-decoration:none; color:white; font-family:'ClashDisplay'; padding: 15px 40px; border-radius:30px; width:max-content;" target="_blank">ORDER NOW</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="testimonials">
+        <img src="assets/testimoni/testimoni1.jpeg" class="float-ss f-img1" alt="SS WA">
+        <img src="assets/testimoni/testimoni2.jpeg" class="float-ss f-img2" alt="SS WA">
+        <img src="assets/testimoni/testimoni3.jpeg" class="float-ss f-img3" alt="SS WA">
+        <img src="assets/testimoni/testimoni4.jpeg" class="float-ss f-img4" alt="SS WA"> 
+        <img src="assets/testimoni/testimoni5.jpeg" class="float-ss f-img5" alt="SS WA"> 
+        <img src="assets/testimoni/testimoni6.jpeg" class="float-ss f-img6" alt="SS WA"> 
+        <img src="assets/testimoni/testimoni7.jpeg" class="float-ss f-img7" alt="SS WA"> 
+        <img src="assets/testimoni/testimoni8.jpeg" class="float-ss f-img8" alt="SS WA"> 
+        <img src="assets/testimoni/testimoni9.jpeg" class="float-ss f-img9" alt="SS WA"> 
+        <img src="assets/testimoni/testimoni10.jpeg" class="float-ss f-img10" alt="SS WA"> 
+        <h2 style="margin-bottom: 20px; font-size: clamp(2rem, 4vw, 3rem); text-align: center; z-index:2;">Apa Kata Mereka?</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 40px; opacity: 0.8; line-height: 1.6; z-index:2; position:relative;">
+            Kepuasan Anda adalah prioritas kami. Simak bukti nyata dari pelanggan setia Jokiset.
+        </p>
+        
+        <div class="testi-grid">
+            <div class="testi-card" style="transform: translate(0px, 0px);">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"UDAHH KAKKKK GEMESS BANGETT, SOON PESEN LAGII."</p>
+                <div class="testi-user">
+                    <div class="testi-avatar" style="background: var(--primary-color);">GE</div>
+                    <div>
+                        <h4 style="margin:0; font-size: 1.1rem; text-transform: capitalize;">xxxxx xxxxx</h4>
+                        <span style="font-size: 0.9rem; opacity: 0.7;">Customer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card" style="transform: translate(0px, 0px);">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"s0oo gooddd, suka banget kak thank u."</p>
+                <div class="testi-user">
+                    <div class="testi-avatar" style="background: var(--accent-green); color: var(--dark-color);">AP</div>
+                    <div>
+                        <h4 style="margin:0; font-size: 1.1rem; text-transform: capitalize;">xxxxx xxxxx</h4>
+                        <span style="font-size: 0.9rem; opacity: 0.7;">Customer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card" style="transform: translate(0px, 0px);">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"makasii kakk dia salting bangett omaygatt."</p>
+                <div class="testi-user">
+                    <div class="testi-avatar" style="background: var(--dark-color);">RP</div>
+                    <div>
+                        <h4 style="margin:0; font-size: 1.1rem; text-transform: capitalize;">xxxxx xxxxxxx</h4>
+                        <span style="font-size: 0.9rem; opacity: 0.7;">Customer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2 style="margin-bottom: 10px; font-size: clamp(2rem, 4vw, 3rem); text-align: center;">Pricelist & Katalog</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 10px; opacity: 0.8; line-height: 1.6;">
+            Jelajahi *Price List* dan lakukan pemesanan dengan klik tombol wa di pojok kanan bawah.
+        </p>
+
+        <div class="pdf-wrapper">
+            <div class="pdf-header">
+                <div class="mac-btn mac-red"></div>
+                <div class="mac-btn mac-yellow"></div>
+                <div class="mac-btn mac-green"></div>
+                <span class="pdf-title-bar">Price List Jokiset</span>
+            </div>
+            <iframe src="assets/Price List Jokiset.pdf#toolbar=0&navpanes=0&scrollbar=0" class="pdf-iframe" title="Jokiset PDF Viewer"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p style="margin-bottom: 5px; font-weight: bold;">&copy; 2026 JokiSet Special Moment. All Rights Reserved.</p>
+        <p style="opacity: 0.7; font-size: 0.9rem;">Aesthetic Parody App Specialist since 2026.</p>
+    </footer>
+
+    <a href="https://wa.me/628157022091" class="wa-float" target="_blank" title="Chat on WhatsApp">
+        <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.5-14.7-27.6-32.8-30.8-38.4-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.5-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
